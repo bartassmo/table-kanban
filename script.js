@@ -47,15 +47,15 @@ $(function() {
     function Card() {
         var self = this;
         
-        this.id = randomString();
-        this.description = description;
-        this.$element = createCard();
+        self.id = randomString();
+        self.description = description;
+        self.$element = createCard();
         
         function createCard() {
             var $card = $('<li>').addClass('card');
             var $cardDescription = $('<p>').addClass('card-description').text(self.description);
-            var $cardDelete = $('<button>').addClass('btn-detele').text('x');
-            
+            var $cardDelete = $('<button>').addClass('btn-delete').text('x');
+
             $cardDelete.on('click', function() {
                 self.removeCard();
             });
@@ -73,7 +73,7 @@ $(function() {
     var board = {
         name: 'Tablica Kanban',
         addColumn: function(column) {
-            this.$element.append(column.$element);
+            $('#board .column-container').append(column.$element);
                 initSortable();
         },
         element: $('#board .column-container')
