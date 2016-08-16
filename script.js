@@ -10,18 +10,18 @@ $(function() {
     }
     function Column(name) {
         var self = this;
-        
+        //Should be self
         this.id = randomString();
         this.name = name;
         this.$element = createColumn();
-        
+
         function createColumn() {
             var $column = $('<div>').addClass('column');
             var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
             var $columnCardList = $('<ul>').addClass('column-card-list');
             var $columnDelete = $('<button>').addClass('btn-delete').text('x');
             var $columnAddCard = $('<button>').addClass('add-card').text('Dodaj kartę');
-            
+
             $columnDelete.on('click', function() {
                 self.deleteColumn();
             });
@@ -32,7 +32,7 @@ $(function() {
                 .append($columnDelete)
                 .append($columnAddCard)
                 .append($columnCardList);
-            
+
             return $column;
         }
     }
@@ -44,13 +44,18 @@ $(function() {
             this.$element.remove();
         }
     };
-    function Card() {
+    //Here should be description put to funciton
+    function Card(description) {
         var self = this;
-        
+
         self.id = randomString();
+        //Here is description you were missing
+        //Always check devtools console for errors.
+        //Console says what is the problem and in what line
+        //We will cover debugging on next call on Friday
         self.description = description;
         self.$element = createCard();
-        
+
         function createCard() {
             var $card = $('<li>').addClass('card');
             var $cardDescription = $('<p>').addClass('card-description').text(self.description);
@@ -69,7 +74,7 @@ $(function() {
             this.$element.remove();
         }
     }
-    
+
     var board = {
         name: 'Tablica Kanban',
         addColumn: function(column) {
@@ -92,14 +97,14 @@ $(function() {
     var todoColumn = new Column('Do zrobienia');
     var doingColumn = new Column('W trakcie');
     var doneColumn = new Column('Skończone');
-    
+
     board.addColumn(todoColumn);
     board.addColumn(doingColumn);
     board.addColumn(doneColumn);
-    
+
     var card1 = new Card('Nowe zadanie');
     var card2 = new Card('Stworzyć tablice kanban');
-    
+
     todoColumn.addCard(card1);
     doingColumn.addCard(card2);
 })
