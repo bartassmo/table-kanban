@@ -10,10 +10,10 @@ $(function() {
     }
     function Column(name) {
         var self = this;
-        //Should be self
-        this.id = randomString();
-        this.name = name;
-        this.$element = createColumn();
+        
+        self.id = randomString();
+        self.name = name;
+        self.$element = createColumn();
 
         function createColumn() {
             var $column = $('<div>').addClass('column');
@@ -44,15 +44,10 @@ $(function() {
             this.$element.remove();
         }
     };
-    //Here should be description put to funciton
     function Card(description) {
         var self = this;
 
         self.id = randomString();
-        //Here is description you were missing
-        //Always check devtools console for errors.
-        //Console says what is the problem and in what line
-        //We will cover debugging on next call on Friday
         self.description = description;
         self.$element = createCard();
 
