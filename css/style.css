@@ -39,10 +39,12 @@ body {
 
     padding: 5px 10px;
     background-color: transparent;
-    border: 2px solid #515751;
+    border: 0;
+    border-bottom: 2px solid #515751;
     border-radius: 3px;
+    padding-bottom: 0;
     color: #515751;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     transition: 0.2s all ease-in;
 
@@ -58,6 +60,7 @@ body {
 .btn-delete {
 
     display: inline-block;
+    border: 0;
     margin-right: 10px;
     padding: 3px 6px;
     color: #840032;
