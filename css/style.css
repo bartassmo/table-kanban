@@ -60,22 +60,28 @@ body {
 .btn-delete {
 
     display: inline-block;
-    border: 0;
+    border: 2px solid transparent;
     margin-right: 10px;
     padding: 3px 6px;
     color: #840032;
     font-size: 14px;
     font-weight: 700;
+    transition: all 0.2s;
+}
 
+.btn-delete:hover {
+    border-color: #840032;
+    background-color: transparent;
+    color: #840032;
 }
 
 .create-column {
 
     display: inline-block;
     margin-top: 15px;
-    background-image: linear-gradient(90deg, #515751 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #515751 50%, transparent 50%);
     background-position: 100% 0;
-    background-size: 200%;
+    background-size: 250%;
     transition: 0.2s all ease-in;
     padding: 7px 13px;
 
@@ -114,7 +120,7 @@ body {
 .column-title {
 
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 600;
     margin-bottom: 10px;
 
 }
